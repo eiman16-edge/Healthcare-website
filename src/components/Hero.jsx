@@ -3,6 +3,7 @@ import { ArrowRight, BadgeCheck, Bone, Brain, Crosshair } from "lucide-react";
 import CircleArrowButton from "./CircleArrowButton.jsx";
 import BrainLoop from "./BrainLoop.jsx";
 import { useLanguage } from "../i18n/LanguageContext.jsx";
+import { publicAsset } from "../utils/publicAsset.js";
 
 const fadeUp = {
   initial: { opacity: 0, y: 26 },
@@ -92,7 +93,7 @@ export default function Hero() {
                 className="absolute inset-[-12%] rounded-full bg-[radial-gradient(circle,rgba(84,136,212,0.22),rgba(204,214,236,0.12)_45%,transparent_70%)]"
               />
               <BrainLoop
-                src="/hero-brain.webm"
+                src={publicAsset("hero-brain.webm")}
                 className="h-[330px] w-[330px] sm:h-[410px] sm:w-[410px] lg:h-[470px] lg:w-[470px] drop-shadow-[0_28px_44px_rgba(61,99,173,0.28)]"
               />
             </div>

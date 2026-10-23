@@ -3,6 +3,7 @@ import { Building2, MapPin, Phone } from "lucide-react";
 import Reveal from "./Reveal.jsx";
 import { FacebookIcon } from "./icons.jsx";
 import { useLanguage } from "../i18n/LanguageContext.jsx";
+import { publicAsset } from "../utils/publicAsset.js";
 
 const CLINIC_NUMBER = "+93787654751";
 const WA_NUMBER = "93787654751";
@@ -116,7 +117,7 @@ export default function Contact() {
 
               <div className="relative">
                 <img
-                  src="/contact-doctor.png"
+                  src={publicAsset("contact-doctor.png")}
                   alt="Dr. Khalid Khan Zadran at Rifah Medical Complex"
                   className="w-full h-[340px] lg:h-[440px] object-cover object-[50%_10%] rounded-t-[210px] rounded-b-[26px] shadow-[0_22px_48px_rgba(15,23,42,0.14)]"
                 />

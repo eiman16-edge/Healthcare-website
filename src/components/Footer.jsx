@@ -1,6 +1,7 @@
 import { MapPin, Phone } from "lucide-react";
 import { FacebookIcon, WhatsAppIcon } from "./icons.jsx";
 import { useLanguage } from "../i18n/LanguageContext.jsx";
+import { publicAsset } from "../utils/publicAsset.js";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
@@ -28,7 +29,7 @@ export default function Footer() {
           <div>
             <a href="#home" className="flex items-center gap-3">
               <span className="shrink-0 w-11 h-11 grid place-items-center rounded-[13px] bg-white border border-line shadow-[0_6px_14px_rgba(15,23,42,0.08)]">
-                <img src="/brain-logo.png" alt="" className="h-8 w-auto object-contain" />
+                <img src={publicAsset("brain-logo.png")} alt="" className="h-8 w-auto object-contain" />
               </span>
               <span className="flex flex-col leading-tight">
                 <strong className="font-display text-[16.5px] font-bold text-navy-800 whitespace-nowrap">

@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Image as ImageIcon } from "lucide-react";
 import ImgPlaceholder from "./ImgPlaceholder.jsx";
 import SectionHead from "./SectionHead.jsx";
 import { useLanguage } from "../i18n/LanguageContext.jsx";
+import { publicAsset } from "../utils/publicAsset.js";
 
 function ServiceCard({ title, tagline, moreText, imgLabel, imageSrc, imagePos = "50% 50%", imageFilter, hoverScale = 1.07, featured = false, featuredText, bookText }) {
   const [tapped, setTapped] = useState(false);
@@ -37,7 +38,7 @@ function ServiceCard({ title, tagline, moreText, imgLabel, imageSrc, imagePos = 
         >
           {imageSrc ? (
             <img
-              src={imageSrc}
+              src={publicAsset(imageSrc)}
               alt={imgLabel}
               className="block h-full w-full object-cover"
               style={{ objectPosition: imagePos, filter: imageFilter }}

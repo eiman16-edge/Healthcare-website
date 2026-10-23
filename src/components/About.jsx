@@ -3,6 +3,7 @@ import { BadgeCheck, Check, GraduationCap } from "lucide-react";
 import CircleArrowButton from "./CircleArrowButton.jsx";
 import Reveal from "./Reveal.jsx";
 import { useLanguage } from "../i18n/LanguageContext.jsx";
+import { publicAsset } from "../utils/publicAsset.js";
 
 const CHECKLIST = [
   "First FCPS neurosurgeon in Afghanistan",
@@ -19,7 +20,7 @@ export default function About() {
         <div className="grid items-center gap-[clamp(36px,5vw,68px)] lg:grid-cols-[.92fr_1.08fr]">
           <Reveal className="relative">
             <img
-              src="/about-me.jpg"
+              src={publicAsset("about-me.jpg")}
               alt="Dr. Khalid Khan Zadran in his clinic"
               className="h-[340px] lg:h-[460px] w-full rounded-[30px] object-cover object-center"
             />
