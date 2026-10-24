@@ -22,21 +22,21 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-[100] pt-3.5">
-      <div className="w-[min(1160px,100%-40px)] mx-auto">
+      <div className="w-[min(1160px,100%-24px)] mx-auto">
         <div
-          className={`relative flex items-center gap-3 glass rounded-[18px] px-4.5 py-3 transition-shadow duration-300 ${
+          className={`relative flex items-center gap-2.5 glass rounded-[18px] px-2.5 py-2.5 sm:gap-3 sm:px-4.5 sm:py-3 transition-shadow duration-300 ${
             scrolled ? "shadow-[0_16px_40px_rgba(15,23,42,0.12)]" : ""
           }`}
         >
-          <a href="#home" className="flex items-center gap-3 min-w-0" aria-label="Dr. Khalid Khan Zadran — home">
-            <span className="shrink-0 w-11 h-11 grid place-items-center rounded-[13px] bg-white border border-line shadow-[0_6px_14px_rgba(15,23,42,0.08)]">
+          <a href="#home" className="flex flex-1 xl:flex-none items-center gap-2 sm:gap-3 min-w-0" aria-label="Dr. Khalid Khan Zadran — home">
+            <span className="shrink-0 w-10 h-10 sm:w-11 sm:h-11 grid place-items-center rounded-[13px] bg-white border border-line shadow-[0_6px_14px_rgba(15,23,42,0.08)]">
               <img src={publicAsset("brain-logo.png")} alt="" className="h-8 w-auto object-contain" />
             </span>
-            <span className="flex flex-col leading-tight">
-              <strong className="font-display text-[16.5px] font-bold text-navy-800 whitespace-nowrap">
+            <span className="flex min-w-0 flex-col leading-tight">
+              <strong className="font-display text-[clamp(12px,3.65vw,16.5px)] sm:text-[16.5px] font-bold text-navy-800 whitespace-nowrap overflow-hidden text-ellipsis">
                 Dr. Khalid Khan Zadran
               </strong>
-              <small className="text-xs text-muted">{t.consultant}</small>
+              <small className="text-[10px] sm:text-xs text-muted whitespace-nowrap overflow-hidden text-ellipsis">{t.consultant}</small>
             </span>
           </a>
 
@@ -61,13 +61,13 @@ export default function Header() {
           </a>
 
           <label className="sr-only" htmlFor="language-select">{t.language}</label>
-          <select id="language-select" value={language} onChange={(event) => setLanguage(event.target.value)} className="h-10 max-w-[105px] rounded-full border border-line bg-white/75 px-3 text-[13px] font-semibold text-navy-800 outline-none focus-visible:ring-2 focus-visible:ring-teal-500" aria-label={t.language}>
+          <select id="language-select" value={language} onChange={(event) => setLanguage(event.target.value)} className="h-9 w-[78px] shrink-0 rounded-full border border-line bg-white/75 px-2 text-[11px] sm:h-10 sm:w-auto sm:max-w-[105px] sm:px-3 sm:text-[13px] font-semibold text-navy-800 outline-none focus-visible:ring-2 focus-visible:ring-teal-500" aria-label={t.language}>
             {LANGUAGES.map((item) => <option key={item.code} value={item.code}>{item.native}</option>)}
           </select>
 
           {/* Mobile toggle */}
           <button
-            className="xl:hidden ml-auto w-11 h-11 grid place-items-center rounded-xl liquid-glass text-navy-800 cursor-pointer"
+            className="xl:hidden w-10 h-10 sm:w-11 sm:h-11 shrink-0 grid place-items-center rounded-xl liquid-glass text-navy-800 cursor-pointer"
             aria-label={t.mobileMenu}
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}

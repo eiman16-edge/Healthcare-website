@@ -31,12 +31,12 @@ const QUICK_CARDS = [
 export default function Hero() {
   const { t } = useLanguage();
   return (
-    <section className="w-[min(1160px,100%-40px)] mx-auto pt-[18px]" aria-label="Introduction">
+    <section className="w-[min(1160px,100%-24px)] mx-auto pt-3.5 sm:pt-[18px]" aria-label="Introduction">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.22, 0.61, 0.36, 1] }}
-        className="relative overflow-hidden rounded-[34px] px-[clamp(26px,5.5vw,68px)] pt-[clamp(44px,6vw,76px)] pb-[clamp(130px,15vw,165px)] border border-[rgba(15,23,42,0.06)] shadow-[0_24px_60px_rgba(15,23,42,0.08)]"
+        className="relative min-w-0 overflow-hidden rounded-[28px] sm:rounded-[34px] px-[clamp(20px,5.5vw,68px)] pt-[clamp(34px,6vw,76px)] pb-[clamp(104px,15vw,165px)] border border-[rgba(15,23,42,0.06)] shadow-[0_24px_60px_rgba(15,23,42,0.08)]"
         style={{
           background:
             "radial-gradient(620px 320px at 88% -10%, rgba(84,136,212,0.16), transparent 65%)," +
@@ -46,12 +46,12 @@ export default function Hero() {
       >
         <div className="hero-dots absolute inset-0 pointer-events-none" aria-hidden="true" />
 
-        <div className="relative grid items-center gap-12 lg:grid-cols-[1.08fr_.92fr]">
+        <div className="relative grid min-w-0 items-center gap-8 lg:gap-12 lg:grid-cols-[1.08fr_.92fr]">
           <div>
             <motion.p
               {...fadeUp}
               transition={{ duration: 0.55, delay: 0.1 }}
-              className="inline-block text-[13px] font-bold tracking-[0.12em] uppercase text-teal-700 bg-white/80 backdrop-blur border border-line shadow-sm px-4 py-1.75 rounded-full mb-5"
+              className="inline-block max-w-full whitespace-normal break-words text-[clamp(10px,2.8vw,13px)] sm:text-[13px] leading-snug font-bold tracking-[0.1em] sm:tracking-[0.12em] uppercase text-teal-700 bg-white/80 backdrop-blur border border-line shadow-sm px-3 sm:px-4 py-2 rounded-full mb-5"
             >
               {t.heroRole}
             </motion.p>
@@ -84,7 +84,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 0.61, 0.36, 1] }}
-            className="relative max-w-[440px] lg:max-w-none"
+            className="relative min-w-0 max-w-[440px] mx-auto lg:mx-0 lg:max-w-none"
           >
             {/* Rotating transparent brain animation (seamless crossfade loop) */}
             <div className="relative flex items-center justify-center py-2">
@@ -94,7 +94,7 @@ export default function Hero() {
               />
               <BrainLoop
                 src={publicAsset("hero-brain.webm")}
-                className="h-[330px] w-[330px] sm:h-[410px] sm:w-[410px] lg:h-[470px] lg:w-[470px] drop-shadow-[0_28px_44px_rgba(61,99,173,0.28)]"
+                className="h-[min(78vw,330px)] w-[min(78vw,330px)] sm:h-[410px] sm:w-[410px] lg:h-[470px] lg:w-[470px] drop-shadow-[0_28px_44px_rgba(61,99,173,0.28)]"
               />
             </div>
             <motion.div
@@ -111,7 +111,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Quick cards overlapping the hero bottom */}
-      <div className="relative z-10 grid gap-5.5 md:grid-cols-3 -mt-[70px] md:-mt-[88px]">
+      <div className="relative z-10 grid min-w-0 gap-4.5 sm:gap-5.5 md:grid-cols-3 -mt-[54px] md:-mt-[88px]">
         {QUICK_CARDS.map((card, i) => (
           <motion.a
             key={card.title}
