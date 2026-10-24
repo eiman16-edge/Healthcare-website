@@ -86,7 +86,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 0.61, 0.36, 1] }}
             className="relative min-w-0 max-w-[440px] mx-auto lg:mx-0 lg:max-w-none"
           >
-            {/* Rotating transparent brain animation (seamless crossfade loop) */}
+            {/* Rotating transparent brain animation */}
             <div className="relative flex items-center justify-center py-2">
               <div
                 aria-hidden="true"
@@ -94,7 +94,7 @@ export default function Hero() {
               />
               <BrainLoop
                 src={publicAsset("hero-brain.webm")}
-                className="h-[min(78vw,330px)] w-[min(78vw,330px)] sm:h-[410px] sm:w-[410px] lg:h-[470px] lg:w-[470px] drop-shadow-[0_28px_44px_rgba(61,99,173,0.28)]"
+                className="h-[330px] w-[330px] sm:h-[410px] sm:w-[410px] lg:h-[470px] lg:w-[470px] drop-shadow-[0_28px_44px_rgba(61,99,173,0.28)]"
               />
             </div>
             <motion.div

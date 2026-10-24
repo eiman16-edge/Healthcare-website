@@ -294,31 +294,6 @@
     mask-image: radial-gradient(520px 300px at 12% 18%, #000 0%, transparent 72%);
   }
 
-  .brain-loop-stage {
-    perspective: 1000px;
-  }
-
-  .brain-loop-video {
-    background: transparent;
-    mix-blend-mode: screen;
-  }
-
-  .brain-loop-video--fallback {
-    animation: brain-turn 18s linear infinite;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-  }
-
-  .brain-loop-video::-webkit-media-controls-start-playback-button {
-    display: none !important;
-    -webkit-appearance: none;
-  }
-
-  @keyframes brain-turn {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(360deg); }
-  }
-
   .dari {
     font-family: "Segoe UI", Tahoma, Arial, sans-serif;
     line-height: 1.9;
@@ -328,8 +303,5 @@
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-  .brain-loop-video--fallback {
-    animation: none;
   }
 }
